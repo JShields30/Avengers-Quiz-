@@ -23,6 +23,10 @@
 .choice-text {
     padding: 1.5rem;
     width: 100%;
+    color: black;
+}
+#question {
+    color: whitesmoke;
 }
 
 .correct {

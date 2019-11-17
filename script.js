@@ -6,7 +6,11 @@ const scoreText = document.getElementById("score");
 const progressBarFull = document.getElementById("progressBarFull");
 const loader = document.getElementById("loader");
 const game = document.getElementById("game");
+const timer = document.getElementById("timer");
 
+let timerInterval;
+const totalTimeAlowed = 90;
+let timeRemaining;
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -106,12 +110,25 @@ startGame = () => {
   score = 0;
   availableQuesions = [...questions];
   getNewQuestion();
+  timeRemaining = totalTimeAlowed;
+  timer.textContent = timeRemaining;
+  timerInterval = setInterval(function(){
+    timeRemaining--;
+    timer.textContent = timeRemaining;
+   
+    if (timeRemaining <= 0){  
+      clearInterval (timerInterval);
+      window.location.assign("end.html");
+    }
+  }, 1000)
 };
+
 
 getNewQuestion = () => {
   if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);
     //go to the end page
+    clearInterval(timerInterval);
     return window.location.assign("end.html");
   }
   questionCounter++;
@@ -143,8 +160,11 @@ choices.forEach(choice => {
 
     const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
 
-    if (classToApply === "correct") {
+    if (classToApply === "correct") {      
       incrementScore(CORRECT_BONUS);
+    }
+    else {
+      timeRemaining = timeRemaining-8;
     }
 
     selectedChoice.parentElement.classList.add(classToApply);
