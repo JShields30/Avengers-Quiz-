@@ -2,15 +2,20 @@
     list-style: none;
     padding-left: 0;
     margin-bottom: 4rem;
+    text-shadow:0px 0px 17px #3268bd,0px -2px 17px #3268bd;
   }
   
   .high-score {
     font-size: 2.8rem;
     margin-bottom: 0.5rem;
     color: white;
+    text-shadow:0px 0px 17px #3268bd,0px -2px 17px #3268bd;
   }
   
   .high-score:hover {
     transform: scale(1.025);
   }
   
+  #finalScore {
+    text-shadow:0px 0px 17px #3268bd,0px -2px 17px #3268bd;
+  }
