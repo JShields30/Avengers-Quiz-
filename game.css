@@ -27,6 +27,7 @@
 }
 #question {
     color: whitesmoke;
+    text-shadow:0px 0px 17px #3268bd,0px -2px 17px #3268bd;
 }
 
 .correct {
