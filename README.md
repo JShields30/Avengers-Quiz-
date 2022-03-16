@@ -11,4 +11,4 @@ CSS
 ## Authors
 Joe Shields 
 
-## To visit quiz site click on the following link: https://avengers-quiz-beige.vercel.app/
+## To visit site, please click on the following link: https://avengers-quiz-tau.vercel.app/
